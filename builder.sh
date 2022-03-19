@@ -35,7 +35,14 @@ lunch aosp_walleye-userdebug
 
 # fix regression issues
 cd ~/android/pe/device/google/wahoo
-git revert --no-edit ba4884e8d89c60dc03b091f9d4bc31b83a9977b2
+git revert --no-edit ba4884e8d89c60dc03b091f9d4bc31b83a9977b2  # walleye can't be repartitioned (?)
+cd ~/android/pe
+
+# remove non essential apps (otherwise build won't fit in the flash)
+cd ~/android/pe/vendor/gapps
+for app in Velvet Tycho TurboPrebuilt; do
+    sed -ri'' "/^[[:space:]]*$app \\\\/d" config.mk
+done
 cd ~/android/pe
 
 croot
