@@ -5,7 +5,7 @@
 #SBATCH --partition fast
 #SBATCH --nodes 1
 #SBATCH --dependency=singleton
-#SBATCH --time=04:00:00
+#SBATCH --time=05:00:00
 
 JOB_PERIOD=$((7 * 24 * 3600))
 JOB_OFFSET=$((2 * 3600))
