@@ -33,5 +33,10 @@ repo sync -j$(nproc) -c -j$(nproc) --force-sync --no-clone-bundle --no-tags
 source build/envsetup.sh
 lunch aosp_walleye-userdebug
 
+# fix regression issues
+cd ~/android/pe/device/google/wahoo
+git revert --no-edit ba4884e8d89c60dc03b091f9d4bc31b83a9977b2
+cd ~/android/pe
+
 croot
 mka bacon -j$(nproc)
