@@ -39,13 +39,7 @@ git revert --no-edit ba4884e8d89c60dc03b091f9d4bc31b83a9977b2  # walleye can't b
 cd ~/android/pe
 
 # remove non essential apps (otherwise build won't fit in the flash)
-cd ~/android/pe/vendor/gapps
-for app in Velvet Tycho TurboPrebuilt CalculatorGooglePrebuilt GoogleTTS talkback SoundAmplifierPrebuilt \
-           HelpRtcPrebuilt PixelLiveWallpaperPrebuilt RecorderPrebuilt SafetyHubPrebuilt Showcase \
-           MyVerizonServices SprintDM SprintHM VzwOmaTrigger MaestroPrebuilt; do
-    sed -ri'' "/^[[:space:]]*$app \\\\/d" config.mk
-done
-cd ~/android/pe
+cp ~/vendor_gapps_config.mk ~/android/pe/vendor/gapps/config.mk
 
 croot
 mka bacon -j$(nproc)
