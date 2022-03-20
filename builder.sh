@@ -40,7 +40,9 @@ cd ~/android/pe
 
 # remove non essential apps (otherwise build won't fit in the flash)
 cd ~/android/pe/vendor/gapps
-for app in Velvet Tycho TurboPrebuilt CalculatorGooglePrebuilt MyVerizonServices SprintDM SprintHM VzwOmaTrigger MaestroPrebuilt; do
+for app in Velvet Tycho TurboPrebuilt CalculatorGooglePrebuilt GoogleTTS talkback SoundAmplifierPrebuilt \
+           HelpRtcPrebuilt PixelLiveWallpaperPrebuilt RecorderPrebuilt SafetyHubPrebuilt Showcase \
+           MyVerizonServices SprintDM SprintHM VzwOmaTrigger MaestroPrebuilt; do
     sed -ri'' "/^[[:space:]]*$app \\\\/d" config.mk
 done
 cd ~/android/pe
