@@ -28,7 +28,6 @@ podman unshare rm -rf /scratch/$USER/builder
 
 mkdir -p /scratch/$USER/builder
 cp builder.sh /scratch/$USER/builder
-cp vendor_gapps_config.mk /scratch/$USER/builder
 podman run --rm --network=host -v /scratch/$USER/builder:/root public.ecr.aws/ubuntu/ubuntu:latest /root/builder.sh
 
 cd /scratch/$USER/builder/android/pe/out/target/product/walleye
