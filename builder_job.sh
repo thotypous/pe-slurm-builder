@@ -8,7 +8,7 @@
 #SBATCH --time=05:00:00
 
 JOB_PERIOD=$((7 * 24 * 3600))
-JOB_OFFSET=$((2 * 3600))
+JOB_OFFSET=$((5 * 3600))
 
 function _requeue() {
   local now timespec
