@@ -35,9 +35,9 @@ lunch aosp_walleye-eng
 
 # override repositories with mine
 cd ~/android/pe/device/google/wahoo
-git remote set-url origin https://github.com/thotypous/device_google_wahoo.git
+git remote set-url pixel-devices https://github.com/thotypous/device_google_wahoo.git
 git fetch --all
-git reset --hard origin/twelve
+git reset --hard pixel-devices/twelve
 cd ~/android/pe
 
 croot
