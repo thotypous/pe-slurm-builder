@@ -30,15 +30,15 @@ yes "" | repo init -u https://github.com/PixelExperience/manifest -b twelve
 
 repo sync -j$(nproc) -c -j$(nproc) --force-sync --no-clone-bundle --no-tags
 
+source build/envsetup.sh
+lunch aosp_walleye-eng
+
 # override repositories with mine
 cd ~/android/pe/device/google/wahoo
 git remote set-url origin https://github.com/thotypous/device_google_wahoo.git
 git fetch --all
 git reset --hard origin/twelve
 cd ~/android/pe
-
-source build/envsetup.sh
-lunch aosp_walleye-eng
 
 croot
 mka bacon -j$(nproc)
